@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.jarent</groupId>
+	<artifactId>spock-munit</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Spock support for Munit</name>
+	<url>https://github.com/jarent/spock-munit</url>
+	<properties>
+		<munit.version>1.2.0</munit.version>
+		<mule.munit.support.version>3.8.0</mule.munit.support.version>
+	</properties>
+	<dependencies>	
+	   <dependency>
+		   <groupId>com.mulesoft.munit</groupId>
+		    <artifactId>mule-munit-support</artifactId>
+		    <version>${mule.munit.support.version}</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>com.mulesoft.munit</groupId>
+		    <artifactId>munit-runner</artifactId>
+		    <version>${munit.version}</version>
+		    <scope>provided</scope>
+		</dependency>	
+	  <dependency>
+	     <groupId>org.spockframework</groupId>
+	     <artifactId>spock-core</artifactId>
+	     <version>1.0-groovy-2.4</version>
+	      <scope>provided</scope>
+	   </dependency>
+    </dependencies>	
+	 <build>   	
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.gmavenplus</groupId>
+				<artifactId>gmavenplus-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>addSources</goal>
+							<goal>compile</goal>
+							<goal>addTestSources</goal>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+          <repository>
+            <id>Central</id>
+            <name>Central</name>
+            <url>http://repo1.maven.org/maven2/</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>mulesoft-releases</id>
+            <name>MuleSoft Releases Repository</name>
+            <url>http://repository.mulesoft.org/releases/</url>
+            <layout>default</layout>
+        </repository>
+          <repository>
+        <id>jcenter</id>
+        <name>JCenter Repo</name>
+        <url>http://jcenter.bintray.com</url>
+    </repository>
+     </repositories>
+	<pluginRepositories>
+        <pluginRepository>
+            <id>mulesoft-release</id>
+            <name>mulesoft release repository</name>
+            <layout>default</layout>
+            <url>http://repository.mulesoft.org/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
